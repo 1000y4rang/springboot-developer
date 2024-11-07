@@ -1,0 +1,35 @@
+spring:
+  jpa:
+    #전송쿼리 확인
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    # 테이블 생성 후 member.sql 실행
+    defer-datasource-initialization: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+
+  h2:
+    console:
+       enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 59332297847-n0li8u00pgd92vtnmn2rkcijguhuqn7h.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
+jwt:
+  issuer: test@naver.com
+  secret_key: 1234
+
+
