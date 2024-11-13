@@ -13,9 +13,10 @@
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="27c81d2f-d75c-47b4-ae63-162852ebcb1a">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
-      <console name="rds-console1" type="STANDARD" schema="mysql" session="Main"><![CDATA[create database blog;
+      <console name="rds-console1" type="STANDARD" schema="blog" session="Main"><![CDATA[create database blog;
 use blog;
 
+--아마존 서버에서 mysql을 사용하기 때문 
 create table article
 (
     id bigint not null AUTO_INCREMENT, 
@@ -47,14 +48,12 @@ create table users
 );
 
 set time_zone = 'Asia/Seoul';
-
-select @@time_zone, now();]]></console>
+select @@time_zone, now();
+commit;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="27c81d2f-d75c-47b4-ae63-162852ebcb1a" object-ref="consoles/rds-console1" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -64,7 +63,9 @@ select @@time_zone, now();]]></console>
     <filters />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces />
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
